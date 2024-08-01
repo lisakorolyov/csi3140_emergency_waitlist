@@ -4,5 +4,6 @@ Lisa Korolyov (300137056) \
 Sophie 
 
 ### Screenshots: 
-![LoginPage]()
-![AdminPage]()
+![LoginPage](/screenshots/loginPage.png)
+![AdminPage](/screenshots/adminPage.png)
+![patientPage](/screenshots/patientPage.png)
