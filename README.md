@@ -1,7 +1,7 @@
 ## Assignment 4 - CSI 3140
 
 Lisa Korolyov (300137056) \
-Sophie 
+Sophie Seguin (300225009)
 
 ### Screenshots: 
 ![LoginPage](/screenshots/loginPage.png)
