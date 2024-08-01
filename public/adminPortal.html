@@ -8,105 +8,114 @@
 </head>
 
 <body>
-    <button class="open-button" onclick="openForm()">Add New Patient</button>
+    <div id="adminPortalBody" class="body-div">
+        <button id="newPatientBtn" class="open-button" onclick="openForm()">Add New Patient</button>
 
-    <div class="form-popup" id="myForm">
-        <form class="form-container" onsubmit="return addNewPatient()">
-            <h2>Fill out this form</h2>
-            
-            <b>Name</b>
-            <input type="text" placeholder="Enter First Name" id="name" required>
-            
-            <b>Last Name</b>
-            <input type="text" placeholder="Enter Last Name" id="last_name" required>
+        <div class="form-popup" id="newPatientPopup">
+            <form class="form-container" onsubmit="return addNewPatient()">
+                <h2 style="margin-top: 0;">New Patient</h2>
+                
+                <label for="name">Name</label>
+                <input type="text" placeholder="Enter First Name" id="name" required>
+                
+                <label for="last_name">Last Name</label>
+                <input type="text" placeholder="Enter Last Name" id="last_name" required>
 
-            <b>Arrival Date</b>
-            <input type="date" id="date" required>
+                <label for="date">Arrival Date</label>
+                <input type="date" id="date" required>
 
-            <b>Arrival Time</b>
-            <input type="time" id="time" required>
+                <label for="time">Arrival Time</label>
+                <input type="time" id="time" required>
 
-            <b>Priority</b>
-            <select id="priority">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
+                <label for="priority">Priority</label>
+                <select id="priority">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
                 </select>
 
-            <button type="submit" class="btn">Submit</button>
-            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-        </form>
-    </div>
+                <div class="buttons-container">
+                    <button type="submit" class="btn submit-btn">Submit</button>
+                    <button type="button" class="btn cancel-btn" onclick="closeForm()">Cancel</button>
+                </div>
+            </form>
+        </div>
 
-    <div class="form-popup" id="myForm2">
-        <form class="form-container" onsubmit="return updatePatient()">
-            <h2>Fill out this form</h2>
+        <div class="form-popup" id="updatePatientPopup">
+            <form class="form-container" onsubmit="return updatePatient()">
+                <h2 style="margin-top: 0;">Update Patient</h2>
 
-            <input type="hidden" id="updatePatient" value="">
-            
-            <b>Name</b>
-            <input type="text" placeholder="Enter updated name" id="1name" required>
+                <input type="hidden" id="updatePatient" value="">
+                
+                <label for="1name">Name</label>
+                <input type="text" placeholder="Enter updated name" id="1name" required>
 
-            <b>Last Name</b>
-            <input type="text" placeholder="Enter updated last name" id="2name" required>
+                <label for="2name">Last Name</label>
+                <input type="text" placeholder="Enter updated last name" id="2name" required>
 
-            <b>Date of Update</b>
-            <input type="date" id="1date" required>
+                <label for="1date">Date of Update</label>
+                <input type="date" id="1date" required>
 
-            <b>Time of Update</b>
-            <input type="time" id="1time" required>
+                <label for="1time">Time of Update</label>
+                <input type="time" id="1time" required>
 
-            <b>New Priority</b>
-            <select id="1priority">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
+                <label for="1priority">New Priority</label>
+                <select id="1priority">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
                 </select>
 
-            <button type="submit" class="btn">Submit</button>
-            <button type="button" class="btn cancel" onclick="removePatient()">Remove Patient</button>
-            <button type="button" class="btn cancel" onclick="closeForm2()">Close</button>
-        </form>
+                <div class="buttons-container">
+                    <button type="submit" class="btn">Submit</button>
+                    <button type="button" class="btn remove-btn" onclick="removePatient()">Remove Patient</button>
+                    <button type="button" class="btn cancel-btn" onclick="closeForm2()">Cancel</button>
+                </div>
+
+            </form>
+        </div>
+
+        <table id="patientList">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Arrival Date</th>
+                <th>Arrival Time</th>
+                <th>Last Seen</th>
+                <th>Priority</th>
+                <th>Save</th>
+            </tr>
+            <tbody>
+                
+            </tbody>
+        </table>        
     </div>
 
-    <table id="patientList">
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Arrival Date</th>
-            <th>Arrival Time</th>
-            <th>Last Seen</th>
-            <th>Priority</th>
-            <th>Save</th>
-        </tr>
-        <tbody>
 
-        </tbody>
-    </table>
 
 </body>
 
 <script>
     function openForm() {
-    document.getElementById("myForm").style.display = "block";
+    document.getElementById("newPatientPopup").style.display = "block";
 }
 
 function closeForm() {
-    document.getElementById("myForm").style.display = "none";
+    document.getElementById("newPatientPopup").style.display = "none";
 }
 
 function changeProfile(button) {
-    document.getElementById("myForm2").style.display = "block";
+    document.getElementById("updatePatientPopup").style.display = "block";
     var buttonValue = button.value;
     document.getElementById("updatePatient").value = buttonValue;
 }
 
 function closeForm2() {
-    document.getElementById("myForm2").style.display = "none";
+    document.getElementById("updatePatientPopup").style.display = "none";
 }
 
 document.addEventListener('DOMContentLoaded', function() {

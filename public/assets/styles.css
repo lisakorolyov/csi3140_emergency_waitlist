@@ -1,12 +1,88 @@
+body {
+    font-family: "Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+    font-size: 16px;
+}
+
+.body-div {
+    margin: auto;
+    margin-top: 100px;
+    width: max-content;
+    border: solid 2px #f7f7f9;
+}
+
+#adminPortalBody.body-div {
+    padding: 30px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.body-div > form {
+    margin: 20px;
+}
+
+.buttons-container {
+    width: 100%;
+    min-height: 37px;
+}
+
+#loginBtn,
+.buttons-container > button {
+    float: right;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+button {
+    font-family: inherit;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-weight: 400;
+    border-style: none;
+    vertical-align: middle;
+}
+
+button:not(:disabled) {
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+input, 
+select {
+    display: block;
+    padding: 6px 12px;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+
 .form-popup {
     display: none;
     position: fixed;
-    bottom: 0;
+    bottom: 10px;
     right: 15px;
     border: 3px solid #f1f1f1;
     z-index: 9;
     background-color: white;
     padding: 20px;
+    min-width: 300px;
+    border-radius: 3px;
 }
 
 .form-container {
@@ -14,24 +90,44 @@
     padding: 10px;
 }
 
-.form-container input[type=text] {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0 10px 0;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+.submit-btn,
+.cancel-btn {
+    margin-top: 10px;
 }
 
-.btn {
-    background-color: #04AA6D;
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    margin-bottom: 10px;
+.cancel-btn {
+    background-color: #6c757d;
+    border-color: #6c757d;
 }
 
-.btn.cancel {
-    background-color: red;
+.cancel-btn:hover {
+    color: #fff;
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+.remove-btn {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.remove-btn:hover {
+    color: #fff;
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+#newPatientBtn {
+    margin-bottom: 30px;
+}
+
+#patientList th {
+    border-bottom: 2px solid #dee2e6;
+    font-weight: bold;
+}
+
+#patientList td, 
+#patientList th {
+    padding: 12px 20px;
+    border-top: 1px solid #dee2e6;
 }

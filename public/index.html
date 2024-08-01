@@ -7,15 +7,19 @@
     <title>Login Emergency Waitlist</title>
 </head>
 <body>
-    <form method="post" onsubmit="return login()">
-        <b>Username</b>
-        <input type="text" placeholder="Enter Username" id="uname" required>
+    <div class="body-div">
+        <form method="post" onsubmit="return login()">
+            <label for="uname" >Username</label>
+            <input type="text" placeholder="Enter Username" id="uname" required>
 
-        <b>Password</b>
-    <input type="password" placeholder="Enter Password" id="psw" required>
+            <label for="psw">Password</label>
+            <input type="password" placeholder="Enter Password" id="psw" required>
 
-    <button type="submit" value="Login">Login</button>
-    </form>
+            <div class="buttons-container">
+                <button id="loginBtn" type="submit" value="Login">Login</button>
+            </div>
+        </form>
+    </div>
 </body>
 
 <script src="./assets/emergency_waitlist.js?version=20"></script>
